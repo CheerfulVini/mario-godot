@@ -38,14 +38,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		animated_sprite_2d.animation = "jump"
+		if health != 0:
+			animated_sprite_2d.animation = "jump"
 	else:
 		if (velocity.x > 1 || velocity.x < -1):
-			animated_sprite_2d.animation = "run"
+			if health != 0:
+				animated_sprite_2d.animation = "run"
 			var true_velocity = abs(velocity.x)
 			animated_sprite_2d.speed_scale = 1 + (true_velocity / 300)
 		else:
-			animated_sprite_2d.animation = "idle"
+			if health != 0:
+				animated_sprite_2d.animation = "idle"
 
 func damage():
 	print(health)

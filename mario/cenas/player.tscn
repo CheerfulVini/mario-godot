@@ -85,7 +85,7 @@ one_way_collision_margin = 0.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wmucc")
-animation = &"dead"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
