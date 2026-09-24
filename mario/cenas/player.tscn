@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://v4a7v46yde4v"]
+[gd_scene load_steps=11 format=3 uid="uid://v4a7v46yde4v"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ck3u4"]
 [ext_resource type="Texture2D" uid="uid://dhk63aite0g4p" path="res://assets/SNES - Super Mario All-Stars_ Super Mario Bros. & The Lost Levels - Playable Characters - Mario and Luigi.png" id="2_5jjkj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m3h5"]
 size = Vector2(8, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df3ra"]
+atlas = ExtResource("2_5jjkj")
+region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_waox0"]
 atlas = ExtResource("2_5jjkj")
@@ -28,7 +32,10 @@ region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wmucc"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df3ra")
+}],
 "loop": true,
 "name": &"dead",
 "speed": 5.0
@@ -82,4 +89,5 @@ animation = &"dead"
 autoplay = "idle"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+scale = Vector2(2, 1)
 target_position = Vector2(0, 14)

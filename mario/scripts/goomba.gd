@@ -16,8 +16,11 @@ func _physics_process(delta: float) -> void:
 	
 	# Mudar de direção se bater na parede
 	if wall_check.is_colliding():
-		direction *= -1
-		wall_check.scale.x *= -1 # Inverte o RayCast para o outro lado
+		if wall_check.get_collider().get_class() == "CharacterBody2D":
+			wall_check.get_collider().damage()
+		else:
+			direction *= -1
+			wall_check.scale.x *= -1 # Inverte o RayCast para o outro lado
 
 	# Movimento horizontal
 	velocity.x = direction * speed

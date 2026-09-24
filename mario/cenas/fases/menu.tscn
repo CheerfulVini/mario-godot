@@ -5,6 +5,7 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3qfb"]
 texture = ExtResource("1_xalw0")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -586,20 +587,11 @@ texture = ExtResource("1_xalw0")
 7:27/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_01fbp"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_f3qfb")
 
 [sub_resource type="GDScript" id="GDScript_8hvjp"]
 script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_pressed() -> void:

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxrwcucfk58t2"]
+
+[ext_resource type="Script" path="res://scripts/flag.gd" id="1_5havn"]
+[ext_resource type="Texture2D" uid="uid://c0pd6cy2ebrjh" path="res://assets/SMB_Goal_Pole.png" id="1_h282g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8d77"]
+size = Vector2(8, 152)
+
+[node name="Flag" type="Area2D"]
+script = ExtResource("1_5havn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, -8)
+shape = SubResource("RectangleShape2D_i8d77")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_h282g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
